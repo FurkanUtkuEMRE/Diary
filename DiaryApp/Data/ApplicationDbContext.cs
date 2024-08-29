@@ -5,6 +5,8 @@ namespace DiaryApp.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        public DbSet<DiaryEntryModel> DiaryEntries { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -38,7 +40,5 @@ namespace DiaryApp.Data
                 }
             );
         }
-
-        public DbSet<DiaryEntryModel> DiaryEntries { get; set; }
     }
 }
