@@ -1,12 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "Create New Entry";
+    ViewData["Title"] = "Edit Current Entry";
 }
 
 @model DiaryEntryModel
 
 <h1 class="text-success mb-3">@ViewData["Title"]</h1>
 
-<form asp-action="Create" method="post">
+<form asp-action="Edit" method="post">
     <fieldset>
         <div>
             <label asp-for="Title" for="diaryEntryTitle" class="form-label mt-4">Title</label>
@@ -27,10 +27,9 @@
         </div>
 
         <div class="d-flex justify-content-between">
-            <button type="submit" class="btn btn-success mt-4">Submit</button>
+            <button type="submit" class="btn btn-success mt-4">Edit</button>
             <a class="btn btn-danger mt-4" asp-area="" asp-controller="DiaryEntries" asp-action="Index">Cancel</a>
         </div>
-
     </fieldset>
 </form>
 

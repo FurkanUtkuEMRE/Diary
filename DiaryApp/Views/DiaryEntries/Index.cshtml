@@ -31,10 +31,10 @@
                 <tr>
                     <td class="text-body">@entry.Title</td>
                     <td class="text-body">@entry.Content</td>
-                    <td class="text-body">@entry.Date</td>
+                    <td class="text-body">@entry.Date.ToShortDateString()</td>
                     <td>
-                        <a class="btn btn-warning">Edit</a>
-                        <a class="btn btn-danger">Delete</a>
+                        <a class="btn btn-warning" asp-area="" asp-controller="DiaryEntries" asp-action="Edit" asp-route-id="@entry.Id">Edit</a>
+                        <a class="btn btn-danger" asp-area="" asp-controller="DiaryEntries" asp-action="Delete" asp-route-id="@entry.Id">Delete</a>
                     </td>
                 </tr>
             }
