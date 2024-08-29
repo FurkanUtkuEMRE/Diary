@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Diary Entries";
+}
+
+@model List<DiaryEntryModel>
+
+<h1 class="text-secondary">@ViewData["Title"]</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-end">
+            <a class="btn btn-outline-light" asp-area="" asp-controller="DiaryEntries" asp-action="Create">Add Entry</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th class="text-secondary">Title</th>
+                <th class="text-secondary">Content</th>
+                <th class="text-secondary">Date</th>
+                <th class="text-secondary">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entry in Model)
+            {
+                <tr>
+                    <td class="text-body">@entry.Title</td>
+                    <td class="text-body">@entry.Content</td>
+                    <td class="text-body">@entry.Date</td>
+                    <td>
+                        <a class="btn btn-warning">Edit</a>
+                        <a class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
